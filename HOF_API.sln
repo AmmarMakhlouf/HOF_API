@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HOF_API", "HOF_API.csproj", "{1BDA1D62-1CAE-4F39-A3A7-D5AD2ED55CA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HOF_API.Test", "..\HOF_API.Test\HOF_API.Test.csproj", "{3FE77199-6214-4E8A-9FC8-33ECD7BEDD63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BDA1D62-1CAE-4F39-A3A7-D5AD2ED55CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BDA1D62-1CAE-4F39-A3A7-D5AD2ED55CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BDA1D62-1CAE-4F39-A3A7-D5AD2ED55CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BDA1D62-1CAE-4F39-A3A7-D5AD2ED55CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE77199-6214-4E8A-9FC8-33ECD7BEDD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE77199-6214-4E8A-9FC8-33ECD7BEDD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE77199-6214-4E8A-9FC8-33ECD7BEDD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE77199-6214-4E8A-9FC8-33ECD7BEDD63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EADAE67-A7D8-48AE-9585-48D2091FEEFD}
+	EndGlobalSection
+EndGlobal

@@ -5,7 +5,6 @@ using HOF_API.Model;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
-using Serilog;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Text.Json;
@@ -16,12 +15,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddHttpContextAccessor(); //Requierd Service for Loupe
-
-//Log all exceptions to the file logs.txt
-Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Debug()
-    .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();

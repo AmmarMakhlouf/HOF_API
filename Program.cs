@@ -1,8 +1,9 @@
-﻿using FluentValidation;
+using FluentValidation;
 using FluentValidation.Results;
 using HOF_API;
 using HOF_API.Model;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System.ComponentModel.DataAnnotations;
@@ -30,12 +31,31 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));//Read connection string from appsettings.json
 
 });
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestHeaders.Add("sec-ch-ua");
+    logging.ResponseHeaders.Add("MyResponseHeader");
+    logging.MediaTypeOptions.AddText("application/javascript");
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
- app.UseSwagger();
- app.UseSwaggerUI();
+//Log all exceptions in Production mode
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+}
+app.UseStaticFiles();
+
+app.UseHttpLogging();
+
+// Configure the swagger documentation.
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
